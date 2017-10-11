@@ -1,0 +1,21 @@
+# Use postgres/example user/password credentials
+# https://hub.docker.com/_/postgres/
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      #PGDATA
+      #POSTGRES_DB: johny_website
+      #POSTGRES_INITDB_ARGS
+      #POSTGRES_INITDB_XLOGDIR
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    ports:
+      - 18080:8080
